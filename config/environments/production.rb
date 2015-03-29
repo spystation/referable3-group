@@ -122,5 +122,8 @@ Rails.application.configure do
     :authentication       => 'login',
     :domain               => 'heroku.com', # your domain to identify your server when connecting
   }
+
+  config.serve_static_assets = true
+  config.assets.compile = true
   
 end

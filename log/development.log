@@ -50816,3 +50816,117 @@ Started GET "/assets/twitter.png" for ::1 at 2015-03-29 13:34:14 -0400
 
 
 Started GET "/assets/facebook.png" for ::1 at 2015-03-29 13:34:14 -0400
+
+
+Started GET "/" for ::1 at 2015-03-29 14:09:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kfillmore27@gmail.com"]]
+Redirected to http://localhost:3000/refer-a-friend
+Filter chain halted as :skip_to_refer rendered or redirected
+Completed 302 Found in 95ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/refer-a-friend" for ::1 at 2015-03-29 14:09:04 -0400
+Processing by UsersController#refer as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "kfillmore27@gmail.com"]]
+  Rendered users/refer.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 11ms
+
+SyntaxError (/Users/Administrator/Documents/Programming/Codecademy/Final-Project/test/referable3/app/views/users/refer.html.erb:34: syntax error, unexpected ':', expecting ')'
+...social-share-button-facebook" :url => "#{root_url}/?ref=#{ur...
+...                               ^
+/Users/Administrator/Documents/Programming/Codecademy/Final-Project/test/referable3/app/views/users/refer.html.erb:34: syntax error, unexpected ',', expecting ')'
+..."#{root_url}/?ref=#{url_code}", :popup => "true", :image => ...
+...                               ^
+/Users/Administrator/Documents/Programming/Codecademy/Final-Project/test/referable3/app/views/users/refer.html.erb:34: syntax error, unexpected ',', expecting ')'
+...#{url_code}", :popup => "true", :image => "https://ununsplas...
+...                               ^
+/Users/Administrator/Documents/Programming/Codecademy/Final-Project/test/referable3/app/views/users/refer.html.erb:34: syntax error, unexpected ',', expecting ')'
+...a61419561b5c796bca3158e7c704c", via: "Referable"));@output_b...
+...                               ^
+/Users/Administrator/Documents/Programming/Codecademy/Final-Project/test/referable3/app/views/users/refer.html.erb:34: syntax error, unexpected ')', expecting keyword_end
+...158e7c704c", via: "Referable"));@output_buffer.safe_append='...
+...                               ^):
+  app/views/users/refer.html.erb:34: syntax error, unexpected ':', expecting ')'
+  app/views/users/refer.html.erb:34: syntax error, unexpected ',', expecting ')'
+  app/views/users/refer.html.erb:34: syntax error, unexpected ',', expecting ')'
+  app/views/users/refer.html.erb:34: syntax error, unexpected ',', expecting ')'
+  app/views/users/refer.html.erb:34: syntax error, unexpected ')', expecting keyword_end
+
+
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.5ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.0/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (34.6ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (18.4ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Administrator/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (67.7ms)
+
+
+Started GET "/refer-a-friend" for ::1 at 2015-03-29 14:09:19 -0400
+Processing by UsersController#refer as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "kfillmore27@gmail.com"]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "users" WHERE "users"."referrer_id" = ?[0m  [["referrer_id", 9]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "users" WHERE "users"."referrer_id" = ?  [["referrer_id", 9]]
+  Rendered users/refer.html.erb within layouts/application (120.1ms)
+Completed 200 OK in 308ms (Views: 306.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/homes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/social-share-button-9af7f557d2be296807238965fb21f8f0.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/social-share-button-07852afb1cbd4b9a62926e94ebf678cf.css?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/homes-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/users-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/application-6698b9341766be9969cf7cea6cba0593.js?body=1" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/referable-logo-c6c034ed9663ff7f6fff6653d15583ac.png" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/beer-51f444cefe27d0b194dac533ed4b15aa.jpg" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/ramen-64caafa81ef49b8ad73ae49804660591.jpg" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/coffee-061ae8472336d8d305aad764daec5514.jpg" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/pizza-a4beb3af28f1a5c8d18135b03a60058a.jpg" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/twitter.png" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/facebook.png" for ::1 at 2015-03-29 14:09:20 -0400
+
+
+Started GET "/assets/homes-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for ::1 at 2015-03-29 14:09:25 -0400
+
+
+Started GET "/assets/social-share-button-07852afb1cbd4b9a62926e94ebf678cf.css?body=1" for ::1 at 2015-03-29 14:09:25 -0400
