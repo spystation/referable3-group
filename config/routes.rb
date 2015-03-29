@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :homes, only: [:show]
+  get 'homes/show'
 
   devise_for :admins
   root 'users#new'

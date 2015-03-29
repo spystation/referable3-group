@@ -29,6 +29,10 @@
         <h4>Spread the word by sharing this link with your friends</h4>
         <div class="ref-link"><%= root_url %>?ref=<%= @user.referral_code %></div>
         <div class="box">
+          <% url_code = @user.referral_code %>
+          <!-- Social Share Buttons -->
+          <p> <%= social_share_button_tag("Check out Referable, the new #startup in town!", :url => "#{root_url}/?ref=#{url_code}", :popup => "true", :image => "https://ununsplash.imgix.net/photo-1423753623104-718aaace6772?q=75&fm=jpg&s=1ffa61419561b5c796bca3158e7c704c", via: "Referable")%></p>
+
           <a href="mailto:?subject=Check out the Referable App&body=Hi,%0D%0A%0D%0A I found this awesome app and thought you might like it:%0D%0A%0D%0A https://referable.herokuapp.com/?ref=<%= @user.referral_code %> %0D%0A%0D%0A I hope you like it!">
           <div class="primary-btn">Share</div>
           </a>
