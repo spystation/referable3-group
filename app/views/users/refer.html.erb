@@ -1,0 +1,97 @@
+  <%
+    referrals_count = @user.referrals.count
+
+    stops = User::REFERRAL_STEPS
+  
+    found = nil
+
+    next_stop = nil
+
+    stops.reverse_each { |stop|
+        if stop["count"] <= referrals_count and !found
+            stop["selected"] = true
+            found = stop
+            current_index = stops.index(stop)
+             next_stop = stops.at(current_index + 1)
+        else
+            stop["selected"] = false
+            next_stop = stops.at(0)
+        end
+    }
+  %>
+
+
+<div class="summary">
+  <div class="container">
+    <div class="row content">
+      <div class="col-md-6 col-sm-12 col-xs-12 thanks">
+        <h1>Thanks For Signing Up!</h1>
+        <h4>Spread the word by sharing this link with your friends</h4>
+        <div class="ref-link"><%= root_url %>?ref=<%= @user.referral_code %></div>
+        <div class="box">
+          <a href="mailto:?subject=Check out the Referable App&body=Hi,%0D%0A%0D%0A I found this awesome app and thought you might like it:%0D%0A%0D%0A https://referable.herokuapp.com/?ref=<%= @user.referral_code %> %0D%0A%0D%0A I hope you like it!">
+          <div class="primary-btn">Share</div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12 col-xs-12 refer">
+        <div class="box">
+          <h2>Referral Summary</h2>
+          <% referrals_count = @user.referrals.count %>
+          <% if referrals_count == 0 %>
+            <p><span>No</span> friends have joined...Yet!</p>
+          <% else %>
+            <p>Total referrals: <strong><%= referrals_count %></strong> have joined!</p>
+              <% if referrals_count >= 5 && referrals_count < 10 %>
+                <p>You Won One Free Pizza!</p>
+              <% elsif referrals_count >= 10 && referrals_count < 25 %>
+                <p>You Won 3 Months of Free Ramen!</p>
+              <% elsif referrals_count >= 25 && referrals_count < 50 %>
+                <p>You Won 6 Months of Free Coffee!</p>
+              <% elsif referrals_count >= 50 %>
+                <p>Holy Cow, You Won 1 Year of Free Beer!</p>
+              <% else %>
+                <p></p>
+              <% end %>
+          <% end %>
+          <% if referrals_count >= 50 %>
+            <p>You Got The Biggest Reward! Thank you for your support!</p>
+            <% else %>
+            <p>You are <strong><%= next_stop["count"]-referrals_count%></strong> referrals away from unlocking your next reward!</p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="rewards">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="box">
+          <%= image_tag("pizza.jpg", alt: "Earn") %>
+          <p>One Whole Pizza!</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="box">
+          <%= image_tag("ramen.jpg", alt: "Earn") %>
+          <p>3 Months of Ramen!</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="box">
+          <%= image_tag("coffee.jpg", alt: "Earn") %>
+          <p>6 Months of Coffee!</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 col-xs-6">
+        <div class="box">
+          <%= image_tag("beer.jpg", alt: "Earn") %>
+          <p>1 Year of Beer!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

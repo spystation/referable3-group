@@ -1,0 +1,38 @@
+<div class="jumbotron">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 col-sm-12 col-xs-12">
+				<h1>Make The Products You Love Referable</h1>
+				<p>Be the first to learn when this product launches.</p>
+				  <%= form_for @user, url: {action: "create"} do |f| %>
+					<%= f.label :email %>
+					<%= f.email_field :email, :class => "form", :placeholder => "your@email.com"%>
+					<%= f.submit "Spread the word!", :class => "primary-btn"%>
+				  <% end %>
+			</div>
+		</div>
+		<div class="row supporting">
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="box">
+					<%= image_tag("heart.png", alt: "Signup") %>
+					<h2>Signup</h2>
+					<p>Be the first to know when we officially launch.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12 ">
+				<div class="box">
+					<%= image_tag("paperplane.png", alt: "Refer") %>
+					<h2>Refer</h2>
+					<p>Share products you love with your network of friends.</p>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12">
+				<div class="box">
+					<%= image_tag("banknote.png", alt: "Earn") %>
+					<h2>Earn</h2>
+					<p>Get rewarded for turning your friends into customers.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,179 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+ /* General Styles 
+ ===========================*/
+h1, .jumbotron h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h4 {
+	font-size: 18px;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.primary-btn {
+	background-color: #0ef0d3;
+	color:#fff;
+	padding: 5px 20px;
+	border: solid 2px #0ef0d3;
+	font-weight: 600;
+}
+
+.primary-btn:hover {
+	background-color: transparent;
+	color:#0ef0d3;
+	transition: 0.5s;
+	font-weight: 600;
+}
+
+label {
+	padding-right: 15px;
+	font-size: 20px;
+	color: #fff;
+}
+
+.form {
+	padding: 5px 10%;
+}
+
+
+ /* Header & Footer
+  ===========================*/
+ .header {
+ 	background-color: #e7e7e7;
+ 	padding:8px 0;
+ }
+
+ .footer {
+ 	padding:8px 0;
+ 	background-color: #e7e7e7;
+
+ 	p {
+ 		float: right;
+ 	}
+ }
+
+/* Signup Page */
+.jumbotron {
+	background: url(https://ununsplash.imgix.net/photo-1423753623104-718aaace6772?q=75&fm=jpg&s=1ffa61419561b5c796bca3158e7c704c) no-repeat center center;
+	background-size: cover;
+	height: 100%;
+	text-align: center;
+	margin-bottom:0px;
+}
+
+.supporting {
+	padding-top: 10px;
+	color: #fff;
+	box-sizing: border-box;
+}
+
+.supporting p {
+	font-size: 18px;
+}
+
+.new_user {
+	padding: 55px 0;
+}
+
+.box {
+	padding: 10px;
+	margin: 0 50px;
+	border:2px solid #e1e1e1;
+}
+
+.col-sm-12, .col-xs-12 {
+	padding-top: 20px;
+}
+
+/* Refer A Friend Page
+ ===========================*/
+.summary {
+	background-color: #efefef;
+	background-size: cover;
+	text-align: center;
+	margin: auto;
+	height: 100%;
+}
+
+.thanks .box {
+	border:none;
+	padding: 20px 125px;
+}
+
+.refer {
+	padding-bottom: 40px;
+
+	.box {
+		padding-top: 10px;
+		padding-bottom: 50px;
+	}
+}
+
+.rewards .box {
+	border:none;
+}
+
+.content {
+	padding-top: 50px;
+}
+
+.ref-link {
+	border: 1px solid #D1D0C7;
+	background: #FFF;
+	padding: 10px 0;
+	width: 320px;
+	text-transform: none;
+	font-size: 14px;
+	margin: 20px auto 0;
+	font-weight: 600;
+}
+
+.rewards {
+	height: 100%;
+
+		.row {
+			padding-top: 10px;
+		  	border-bottom: 1px solid #dbdbdb;
+		  	border-top: 1px solid #dbdbdb;
+		}
+		.container {
+			padding-top: 30px;
+			padding-bottom: 30px;
+			text-align: center;
+		}
+}
+
+/* Leaderboard
+==================== */
+.leaderboard .container {
+	padding-bottom: 50px;
+}
+
+
+/* Media Queries
+=================== */
+
+@media (max-width: 600px) {
+	.box {
+		margin: 0px;
+	}
+
+	.jumbotron h1, .summary h1 {
+		font-size: 24px;
+	}
+
+}
